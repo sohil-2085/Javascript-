@@ -12,11 +12,11 @@ const message = document.querySelector(".message");
 // console.log(localStorage.getItem("highScore"));
 const temp = localStorage.getItem("highScore") || 0;
 console.log(typeof temp);
-highScore.innerHTML = temp;
-// highScore.innerHTML = 10 && 1 && 2;
+highScore.textContent = temp;
+// highScore.textContent = 10 && 1 && 2;
 
 const randomNumber = function () {
-  return Math.trunc(Math.random() * 20);
+  return Math.trunc(Math.random() * 20) + 1;
 };
 const rNumber = randomNumber();
 
@@ -37,33 +37,34 @@ checkBtn.addEventListener("click", () => {
   console.log(textValue);
   // console.log(inputValue);
   if (rNumber == textValue) {
+    message.textContent = "🎉 Correct Number .....";
     console.log(textValue);
-    number.innerHTML = textValue;
+    number.textContent = textValue;
     document.body.style.backgroundColor = "#3CB371";
-    localStorage.setItem("score", countScore.innerHTML);
+    localStorage.setItem("score", countScore.textContent);
     // console.log(parseInt(localStorage.getItem("highScore"), 10))
     // console.log(parseInt(localStorage.getItem("score"), 10))
     let cScore = parseInt(localStorage.getItem("score"), 10);
     let hScore = parseInt(localStorage.getItem("highScore"), 10) || 0;
     console.log(cScore, hScore, typeof hScore);
     if (cScore > hScore) {
-      localStorage.setItem("highScore", countScore.innerHTML);
+      localStorage.setItem("highScore", countScore.textContent);
     }
     // localStorage.setItem("highScore", 0);
-    highScore.innerHTML = localStorage.getItem("highScore");
+    highScore.textContent = localStorage.getItem("highScore");
   } else {
     if (rNumber - textValue > 0 && rNumber - textValue <= 3) {
-      message.innerHTML = "Too Close ..... ";
+      message.textContent = "Too Close ..... ";
     } else if (rNumber - textValue < 0 && rNumber - textValue >= -3) {
-      message.innerHTML = "Too Close ..... ";
+      message.textContent = "Too Close ..... ";
     } else if (rNumber - textValue < 0) {
-      message.innerHTML = "Too High 📈 ..... ";
+      message.textContent = "Too High 📈 ..... ";
     } else if (rNumber - textValue > 0) {
-      message.innerHTML = "Too Low 📉 .....";
+      message.textContent = "Too Low 📉 .....";
     }
-    let currentNumber = Number(countScore.innerHTML);
+    let currentNumber = Number(countScore.textContent);
     let newNumber = currentNumber - 1;
-    countScore.innerHTML = newNumber;
+    countScore.textContent = newNumber;
   }
 });
 
