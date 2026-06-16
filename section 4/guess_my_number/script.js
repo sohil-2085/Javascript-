@@ -9,7 +9,11 @@ const again = document.querySelector(".again");
 const message = document.querySelector(".message");
 
 // localStorage.getItem("score");
-highScore.innerHTML = localStorage.getItem("highScore");
+// console.log(localStorage.getItem("highScore"));
+const temp = localStorage.getItem("highScore") || 0;
+console.log(typeof temp);
+highScore.innerHTML = temp;
+// highScore.innerHTML = 10 && 1 && 2;
 
 const randomNumber = function () {
   return Math.trunc(Math.random() * 20);
@@ -40,7 +44,8 @@ checkBtn.addEventListener("click", () => {
     // console.log(parseInt(localStorage.getItem("highScore"), 10))
     // console.log(parseInt(localStorage.getItem("score"), 10))
     let cScore = parseInt(localStorage.getItem("score"), 10);
-    let hScore = parseInt(localStorage.getItem("highScore"), 10);
+    let hScore = parseInt(localStorage.getItem("highScore"), 10) || 0;
+    console.log(cScore, hScore, typeof hScore);
     if (cScore > hScore) {
       localStorage.setItem("highScore", countScore.innerHTML);
     }
