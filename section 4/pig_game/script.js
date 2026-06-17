@@ -70,6 +70,7 @@ holdButton.addEventListener("click", () => {
       current0 + Number(localStorage.getItem("currentScoreOf0"));
     localStorage.setItem("currentScoreOf0", current0 + Number(localStorage.getItem("currentScoreOf0")));
     currentScore0El.innerHTML = 0;
+    current0 = 0;
     player0El.classList.remove("player--active");
     player1El.classList.add("player--active");
   } else {
@@ -79,6 +80,7 @@ holdButton.addEventListener("click", () => {
     localStorage.setItem("currentScoreOf1", current1 + Number(localStorage.getItem("currentScoreOf1")));
     // score1El.innerHTML = current1;
     currentScore1El.innerHTML = 0;
+    current1 = 0;
     player1El.classList.remove("player--active");
     player0El.classList.add("player--active");
   }
