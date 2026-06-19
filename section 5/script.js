@@ -101,3 +101,70 @@ printGoals(...game.scored);
 //we have to print most likely which team is going to win , lower odds team is going to win
 team1 < team2 && console.log("Team 1 is more likely to win...");
 team2 < team1 && console.log("Team 2 is more likely to win...");
+
+const orderSet = new Set([
+  "order1",
+  "order1",
+  "order2",
+  "order3",
+  "order4",
+  "order4",
+]);
+
+console.log(orderSet.size);
+
+console.log("--------Map----------");
+
+const map = new Map();
+map.set("Pizza", "Italian");
+map.set(1, "one");
+
+map
+  .set("categories", ["italian", "vegetarian", "organic"])
+  .set("open", 11)
+  .set("close", 12)
+  .set(true, "we are open")
+  .set(false, "we are closed");
+
+console.log(map.get("categories"));
+console.log(map.get(false));
+console.log(map.get("close"));
+
+console.log("===========Football game===============");
+
+const gameEvents = new Map([
+  [17, "⚽️ GOAL"],
+  [36, "🔁 Substitution"],
+  [47, "⚽️ GOAL"],
+  [61, "🔁 Substitution"],
+  [64, "🔶 Yellow card"],
+  [69, "🔴 Red card"],
+  [70, "🔁 Substitution"],
+  [72, "🔁 Substitution"],
+  [76, "⚽️ GOAL"],
+  [80, "⚽️ GOAL"],
+  [92, "🔶 Yellow card"],
+]);
+
+// creating the array for different game events without duplicates
+const events = [...new Set(gameEvents.values())];
+console.log(events);
+
+//delete the 64 minute's event
+gameEvents.delete(64);
+console.log(gameEvents);
+
+//9 minutes
+console.log(
+  `An event happened, on average, every ${90 / gameEvents.size} minutes`,
+);
+const time = [...gameEvents.keys()].pop();
+console.log(time);
+console.log(
+  `An event happened, on average, every ${time / gameEvents.size} minutes`,
+);
+
+for (const [key, values] of gameEvents) {
+  const half = key <= 45 ? "FIRST" : "SECOND";
+  console.log(`[${half} HALF] ${key}: ${values}`);
+}
