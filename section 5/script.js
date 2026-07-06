@@ -24,147 +24,270 @@
 // const preservingFalsy = myText ?? "Hi neighborhood";
 // console.log(preservingFalsy); // '' (as myText is neither undefined nor null)
 
-const game = {
-  team1: "teamA",
-  team2: "teamB",
-  players: [
-    [
-      "tp10",
-      "tp11",
-      "tp12",
-      "tp13",
-      "tp14",
-      "tp15",
-      "tp16",
-      "tp17",
-      "tp18",
-      "tp19",
-      "tp11",
-    ],
-    [
-      "tp20",
-      "tp21",
-      "tp22",
-      "tp23",
-      "tp24",
-      "tp25",
-      "tp26",
-      "tp27",
-      "tp28",
-      "tp29",
-      "tp21",
-    ],
-  ],
-  score: "4 : 0",
-  scored: ["tp13", "tp12", "tp15", "tp17"],
-  date: "June 19th, 2026",
-  odds: {
-    team1: 1.33,
-    x: 3.25,
-    team2: 6.5,
-  },
-};
+// const game = {
+//   team1: "teamA",
+//   team2: "teamB",
+//   players: [
+//     [
+//       "tp10",
+//       "tp11",
+//       "tp12",
+//       "tp13",
+//       "tp14",
+//       "tp15",
+//       "tp16",
+//       "tp17",
+//       "tp18",
+//       "tp19",
+//       "tp11",
+//     ],
+//     [
+//       "tp20",
+//       "tp21",
+//       "tp22",
+//       "tp23",
+//       "tp24",
+//       "tp25",
+//       "tp26",
+//       "tp27",
+//       "tp28",
+//       "tp29",
+//       "tp21",
+//     ],
+//   ],
+//   score: "4 : 0",
+//   scored: ["tp13", "tp12", "tp15", "tp17"],
+//   date: "June 19th, 2026",
+//   odds: {
+//     team1: 1.33,
+//     x: 3.25,
+//     team2: 6.5,
+//   },
+// };
 
-//first of all we destructured this array in two parts players1 and players2
-const [players1, players2] = game.players;
-console.log(`This the list of team 1 players ${players1}, 
-This is the list of team 2 players ${players2}.`);
+// //first of all we destructured this array in two parts players1 and players2
+// const [players1, players2] = game.players;
+// console.log(`This the list of team 1 players ${players1},
+// This is the list of team 2 players ${players2}.`);
 
-//now we create goalkeeper and other remaining players
-const [goalKeeper, ...fieldPlayers] = players1; //here we used the rest syntax
-console.log(
-  `Goalkeeper is ${goalKeeper} and other field players ${fieldPlayers}`,
-);
+// //now we create goalkeeper and other remaining players
+// const [goalKeeper, ...fieldPlayers] = players1; //here we used the rest syntax
+// console.log(
+//   `Goalkeeper is ${goalKeeper} and other field players ${fieldPlayers}`,
+// );
 
-//now we create one variable for all players of the both team
-const allPlayers = [...players1, ...players2]; //here we use the spread operator to take all players
-console.log(allPlayers);
+// //now we create one variable for all players of the both team
+// const allPlayers = [...players1, ...players2]; //here we use the spread operator to take all players
+// console.log(allPlayers);
 
-//final players because team1 used this substitute players
-const players1Final = [...players1, "Thiago", "Coutinho", "Perisic"];
+// //final players because team1 used this substitute players
+// const players1Final = [...players1, "Thiago", "Coutinho", "Perisic"];
 
-//variable for odds
-const {
-  odds: { team1, x: draw, team2 },
-} = game;
-console.log(team1, draw, team2);
+// //variable for odds
+// const {
+//   odds: { team1, x: draw, team2 },
+// } = game;
+// console.log(team1, draw, team2);
 
-//players who goal
-const printGoals = function (...players) {
-  console.log(`${players.length} goals were scored`);
-};
+// //players who goal
+// const printGoals = function (...players) {
+//   console.log(`${players.length} goals were scored`);
+// };
 
-// printGoals("tp13", "tp12", "tp15", "tp17");
-// printGoals("tp13", "tp12");
-printGoals(...game.scored);
+// // printGoals("tp13", "tp12", "tp15", "tp17");
+// // printGoals("tp13", "tp12");
+// printGoals(...game.scored);
 
-//we have to print most likely which team is going to win , lower odds team is going to win
-team1 < team2 && console.log("Team 1 is more likely to win...");
-team2 < team1 && console.log("Team 2 is more likely to win...");
+// //we have to print most likely which team is going to win , lower odds team is going to win
+// team1 < team2 && console.log("Team 1 is more likely to win...");
+// team2 < team1 && console.log("Team 2 is more likely to win...");
 
-const orderSet = new Set([
-  "order1",
-  "order1",
-  "order2",
-  "order3",
-  "order4",
-  "order4",
-]);
+// const orderSet = new Set([
+//   "order1",
+//   "order1",
+//   "order2",
+//   "order3",
+//   "order4",
+//   "order4",
+// ]);
 
-console.log(orderSet.size);
+// console.log(orderSet.size);
 
-console.log("--------Map----------");
+// console.log("--------Map----------");
 
-const map = new Map();
-map.set("Pizza", "Italian");
-map.set(1, "one");
+// const map = new Map();
+// map.set("Pizza", "Italian");
+// map.set(1, "one");
 
-map
-  .set("categories", ["italian", "vegetarian", "organic"])
-  .set("open", 11)
-  .set("close", 12)
-  .set(true, "we are open")
-  .set(false, "we are closed");
+// map
+//   .set("categories", ["italian", "vegetarian", "organic"])
+//   .set("open", 11)
+//   .set("close", 12)
+//   .set(true, "we are open")
+//   .set(false, "we are closed");
 
-console.log(map.get("categories"));
-console.log(map.get(false));
-console.log(map.get("close"));
+// console.log(map.get("categories"));
+// console.log(map.get(false));
+// console.log(map.get("close"));
 
-console.log("===========Football game===============");
+// console.log("===========Football game===============");
 
-const gameEvents = new Map([
-  [17, "⚽️ GOAL"],
-  [36, "🔁 Substitution"],
-  [47, "⚽️ GOAL"],
-  [61, "🔁 Substitution"],
-  [64, "🔶 Yellow card"],
-  [69, "🔴 Red card"],
-  [70, "🔁 Substitution"],
-  [72, "🔁 Substitution"],
-  [76, "⚽️ GOAL"],
-  [80, "⚽️ GOAL"],
-  [92, "🔶 Yellow card"],
-]);
+// const gameEvents = new Map([
+//   [17, "⚽️ GOAL"],
+//   [36, "🔁 Substitution"],
+//   [47, "⚽️ GOAL"],
+//   [61, "🔁 Substitution"],
+//   [64, "🔶 Yellow card"],
+//   [69, "🔴 Red card"],
+//   [70, "🔁 Substitution"],
+//   [72, "🔁 Substitution"],
+//   [76, "⚽️ GOAL"],
+//   [80, "⚽️ GOAL"],
+//   [92, "🔶 Yellow card"],
+// ]);
 
-// creating the array for different game events without duplicates
-const events = [...new Set(gameEvents.values())];
-console.log(events);
+// // creating the array for different game events without duplicates
+// const events = [...new Set(gameEvents.values())];
+// console.log(events);
 
-//delete the 64 minute's event
-gameEvents.delete(64);
-console.log(gameEvents);
+// //delete the 64 minute's event
+// gameEvents.delete(64);
+// console.log(gameEvents);
 
-//9 minutes
-console.log(
-  `An event happened, on average, every ${90 / gameEvents.size} minutes`,
-);
-const time = [...gameEvents.keys()].pop();
-console.log(time);
-console.log(
-  `An event happened, on average, every ${time / gameEvents.size} minutes`,
-);
+// //9 minutes
+// console.log(
+//   `An event happened, on average, every ${90 / gameEvents.size} minutes`,
+// );
+// const time = [...gameEvents.keys()].pop();
+// console.log(time);
+// console.log(
+//   `An event happened, on average, every ${time / gameEvents.size} minutes`,
+// );
 
-for (const [key, values] of gameEvents) {
-  const half = key <= 45 ? "FIRST" : "SECOND";
-  console.log(`[${half} HALF] ${key}: ${values}`);
-}
+// for (const [key, values] of gameEvents) {
+//   const half = key <= 45 ? "FIRST" : "SECOND";
+//   console.log(`[${half} HALF] ${key}: ${values}`);
+// }
+
+// // working with strings
+// // fix capitalization
+// const name = "joNAs";
+// const nameLower = name.toLowerCase();
+// const nameFinal = nameLower[0].toUpperCase() + nameLower.slice(1);
+// console.log(nameFinal);
+
+// //comparing emails
+// const email = "hello@gmail.com";
+// const loginEmail = "  Hello@gmail.com \n";
+
+// const lowerEmail = loginEmail.toLowerCase();
+// const trimmedEmail = lowerEmail.trim();
+// console.log(
+//   "Original:" + email + "\n" + "Before:" + loginEmail + "After:" + trimmedEmail,
+// );
+
+// //
+
+// document.body.append(document.createElement("textarea"));
+// document.body.append(document.createElement("button"));
+
+// document.querySelector("button").addEventListener("click", function () {
+//   const text = document.querySelector("textarea").value;
+//   console.log(text);
+//   const rows = text.split("\n");
+//   console.log(rows);
+
+//   for (const [i, row] of rows.entries()) {
+//     const [first, second] = row.toLowerCase().trim().split("_");
+
+//     const output = `${first}${second.replace(
+//       second[0],
+//       second[0].toUpperCase(),
+//     )}`;
+//     console.log(`${output.padEnd(20)}${"✅".repeat(i + 1)}`);
+//   }
+// });
+
+// const fetchPromise = fetch(
+//   "https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json",
+// );
+
+// console.log(fetchPromise);
+
+// fetchPromise.then((response) => {
+//   console.log(`Received response: ${response.status}`);
+// });
+
+// console.log("Started request…");
+
+// const greet = (greeting) => (name) => {
+//   console.log(`${greeting} ${name}`);
+// };
+
+// const greetHey = greet("hey");
+
+// greetHey("abc");
+// greetHey("def");
+// greet("hello")("sk");
+
+// const poll = {
+//   question: "What is your favourite programming language?",
+//   options: ["0 : JavaScript", "1 : Java", "2 : C++", "3 : RUST", "4 : Python"],
+//   answers: new Array(5).fill(0),
+
+//   registerNewAnswer() {
+//     const answer = Number(
+//       prompt(
+//         `${this.question}\n${this.options.join("\n")}\n(Write option number : )`,
+//       ),
+//     );
+//     typeof answer === "number" &&
+//       answer < this.answers.length &&
+//       this.answers[answer]++;
+//     // console.log(this.answers);
+//     this.displayResults();
+//     this.displayResults("string");
+//   },
+
+//   displayResults(type = "array") {
+//     if (type === "array") {
+//       console.log(this.answers);
+//     } else if (type === "string") {
+//       console.log(`Poll results are ${this.answers.join(", ")}`);
+//     }
+//   },
+// };
+
+// const button = document.querySelector(".poll");
+// button.addEventListener("click", poll.registerNewAnswer.bind(poll));
+
+// function makeFunc() {
+//   const name = "Mozilla";
+//   function displayName() {
+//     console.log(name);
+//   }
+//   return displayName;
+// }
+// const myFunc = makeFunc();
+// myFunc();
+
+// function makeSizer(size) {
+//   return () => {
+//     document.body.style.fontSize = `${size}px`;
+//   };
+// }
+// const size12 = makeSizer(12);
+// const size14 = makeSizer(14);
+// const size16 = makeSizer(16);
+// document.getElementById("size-12").onclick = size12;
+// document.getElementById("size-14").onclick = size14;
+// document.getElementById("size-16").onclick = size16;
+
+(function () {
+  const header = document.querySelector("h1");
+  header.style.color = "red";
+
+  document.querySelector("body").addEventListener("click", function () {
+    header.style.color = "blue";
+  });
+})();

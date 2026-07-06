@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>How JavaScript Works Behind the Scenes</title>
+    <title>A Closer Look at Functions</title>
     <style>
       body {
         height: 100vh;
@@ -21,10 +21,33 @@
         text-align: center;
         color: white;
       }
+      .buy,
+      .poll {
+        font-size: 1.6rem;
+        padding: 1rem 2rem;
+        position: absolute;
+        top: 2rem;
+      }
+      .buy {
+        left: 2rem;
+      }
+      .poll {
+        right: 2rem;
+      }
     </style>
   </head>
-  <body>
-    <h1>How JavaScript Works Behind the Scenes</h1>
+  <body style="display: flex; flex-direction: column;">
+    <h1>A Closer Look at Functions</h1>
+    <button class="buy">Buy new plane 🛩</button>
+    <button class="poll">Answer poll ⁉️</button>
+    <div class="">
+      <button id="size-12">12</button>
+      <button id="size-14">14</button>
+      <button id="size-16">16</button>
+      <p>
+        This is some text that will change size when you click the buttons above.
+      </p>
+    </div>  
     <script src="script.js"></script>
   </body>
 </html>

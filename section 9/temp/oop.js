@@ -24,10 +24,10 @@ function User(username, loginCount, isLoggedIn) {
   return this;
 }
 
-// const userOne = User("Sohil", 20, true);
-// const userTwo = User("Sohil1", 21, false);
-const userOne = new User("Sohil", 20, true);
-const userTwo = new User("Sohil1", 21, false);
-console.log(userOne.constructor);
-console.log(userOne instanceof User);
-// console.log(userTwo);
+const userOne = User("Sohil", 20, true);
+const userTwo = User("Sohil1", 21, false);
+// const userOne = new User("Sohil", 20, true);
+// const userTwo = new User("Sohil1", 21, false);
+// console.log(userOne.constructor);
+// console.log(userOne instanceof User);
+console.log(userOne);
